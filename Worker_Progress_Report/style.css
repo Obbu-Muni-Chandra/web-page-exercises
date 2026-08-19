@@ -1,0 +1,106 @@
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #eee; }
+body { font-family: "Times New Roman", Times, serif; color: #111; font-size: 16px; }
+.demo-controls { position: fixed; z-index: 2; top: 12px; right: 12px; display: flex; gap: 7px; align-items: center; padding: 7px 9px; background: #fff; border: 1px solid #999; font: 13px Arial, sans-serif; }
+.demo-controls select { font: inherit; }
+.document { width: 210mm; margin: 0 auto; }
+.page {
+  width: 210mm; min-height: 0; background: #fff; position: relative;
+  padding: 11.5mm 11.8mm 6mm; overflow: visible;
+}
+.page + .page { padding-top: 0; }
+.top-header { display: grid; grid-template-columns: 58mm 55mm 1fr; align-items: start; }
+.wcb-logo { width: 42mm; height: auto; margin-top: 1mm; }
+.office-info { font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.28; margin-top: 1mm; }
+.title-area { padding-top: 0; }
+h1 { font-family: Arial, Helvetica, sans-serif; font-size: 20px; line-height: 1.05; margin: 0 0 9px; }
+h2 { font-family: Arial, Helvetica, sans-serif; font-size: 19px; margin: 13px 0 8px; }
+.claim-row { display: flex; gap: 10px; }
+.claim-box, .wp-box { border: 2px solid #111; padding: 7px 8px; font-family: Arial, Helvetica, sans-serif; font-size: 15px; white-space: nowrap; }
+.wp-box { padding: 7px 9px; }
+.intro { margin: 8px 0 18px; font-size: 17px; }
+.blue { color: #06467f; }
+[contenteditable="true"] { cursor: text; }
+.border-box { border: 1px solid #222; }
+.small-label { font-size: 13px; margin-bottom: 10px; }
+.return-box { min-height: 26mm; padding: 8px; }
+.option-grid { display: grid; gap: 7px; align-items: start; }
+.option-grid.three { grid-template-columns: 1fr 1fr 1.55fr; }
+.option-grid.four { grid-template-columns: repeat(4, 1fr); }
+.option-grid.two { grid-template-columns: 1fr 1fr; }
+label { display: flex; align-items: flex-start; gap: 7px; }
+input[type="radio"], input[type="checkbox"] { appearance: none; -webkit-appearance: none; width: 14px; height: 14px; border: 1px solid #888; margin: 1px 0 0; flex: 0 0 14px; position: relative; background: #fff; }
+input[type="radio"]:checked::after { content: ""; position: absolute; width: 7px; height: 7px; background: #111; border-radius: 50%; left: 2px; top: 2px; }
+input[type="checkbox"]:checked::after { content: "✓"; position: absolute; font: bold 13px Arial; left: 0px; top: -2px; }
+.line-value { display: block; border-bottom: 1px solid #111; min-width: 38mm; padding: 0 4px 2px; text-align: center; margin: -2px 0 0 0; }
+.line-value[type="text"] { height: 22px; border: 0; border-bottom: 1px solid #111; outline: 0; background: transparent; font: inherit; color: #06467f; }
+.line-value[type="text"]:disabled { color: #777; background: #f2f2f2; cursor: not-allowed; }
+.return-box label:last-child { flex-wrap: wrap; }
+.return-box label:last-child .line-value { margin-left: 2px; }
+.return-box small, .under-field small, .treatment-options small, .medication-options small, .frequency small { display:block; text-align:center; font-size: 12px; color:#111; }
+.work-box { margin-top: 8mm; min-height: 29mm; padding: 7px 8px; }
+.other-option { margin-top: 9px; align-items: center; }
+.inline-line { border: 0; border-bottom: 1px solid #111; outline: none; width: 118mm; font: inherit; }
+.inline-line:disabled { background: #f2f2f2; cursor: not-allowed; }
+.going-box { margin-top: 6mm; min-height: 15mm; padding: 7px; }
+.answer-text { margin-top: 7px; }
+.date-row { display:flex; align-items:flex-start; gap: 4px; margin: 7mm 2mm 6mm; }
+.under-field { display:inline-flex; flex-direction:column; min-width: 47mm; }
+.under-field.wide { min-width: 55mm; }
+.under-field input { width:100%; border:0; border-bottom:1px solid #111; outline:0; font:inherit; background:transparent; text-align:center; height: 22px; }
+.textarea-box { padding: 6px; }
+.textarea-box textarea { display:block; width:100%; border:0; outline:0; resize:none; background:transparent; font:inherit; }
+.concerns { min-height: 29mm; }
+.concerns textarea { height: 21mm; }
+.contact-row { display:flex; align-items:flex-start; gap: 8px; margin: 7mm 2mm 3mm; }
+.contact-row .under-field.wide { min-width: 72mm; }
+.contact-row .under-field { min-width: 45mm; }
+.recovery-box { min-height: 20mm; padding: 7px 8px; }
+.recovery-comments { min-height: 29mm; margin-top: 6mm; }
+.recovery-comments textarea { height: 21mm; }
+footer { position:absolute; bottom: 8mm; left: 16.5mm; right: 11.5mm; display:grid; grid-template-columns: 1fr 1fr auto; align-items:end; font-size: 13px; font-family: Arial, Helvetica, sans-serif; }
+footer span:only-child { text-align:right; }
+footer span:nth-child(2) { text-align:center; }
+footer span:nth-child(3) { text-align:right; }
+
+.pain-row { display:grid; grid-template-columns: 1.45fr 1fr; margin: 0 0 4mm; align-items:center; }
+.pain-options { display:grid; grid-template-columns: repeat(5, 1fr); row-gap: 7px; font-size: 15px; }
+.pain-options label { gap: 8px; }
+.treatment-box { min-height: 27mm; padding: 7px 8px; }
+.treatment-options { grid-template-columns: max-content minmax(0, 1fr); column-gap: 1cm; row-gap: 0; }
+.option-item { display:grid; grid-template-columns:14px minmax(0, 1fr); column-gap:7px; align-items:start; }
+.treatment-second { grid-template-columns:14px minmax(0, 1fr) minmax(42mm, 1fr); column-gap:5px; }
+.option-radio input { margin-top:1px; }
+.option-copy { line-height:1.15; }
+.option-entry { min-width:0; }
+.option-entry .line-value { width:100%; min-width:0; margin:0; }
+.option-entry small { display:block; text-align:center; font-size:12px; color:#111; }
+.medical-line { display:flex; align-items:flex-start; gap:8px; margin: 7mm 1mm; }
+.medical-line .under-field { margin-top:-2px; }
+.physio-line { display:flex; align-items:flex-start; gap: 13mm; margin: 10mm 1mm 9mm; }
+.frequency { min-width: 74mm; }
+.medication-box { min-height: 30mm; padding:7px 8px; }
+.medication-options { grid-template-columns: max-content minmax(0, 1fr); column-gap: 1cm; row-gap: 0; }
+.medication-second { grid-template-columns:14px minmax(0, 1fr) minmax(38mm, 1fr); column-gap:5px; }
+.exercises-choice { min-height: 20mm; padding:7px 8px; margin-top: 6mm; }
+.exercises-list { min-height: 29mm; margin-top: 6mm; }
+.exercises-list textarea { height: 21mm; }
+.other-info { min-height: 23mm; position:relative; }
+.other-info textarea { height: 10mm; }
+.other-info .answer-text { position:absolute; left:7px; bottom:7px; }
+.page-three { padding-top: 0; }
+.certification { font-size: 16px; line-height: 1.05; }
+.checkline { gap: 10px; }
+.checkline input { margin-top: 2px; }
+.privacy { margin-top: 12mm; }
+
+@media screen and (max-width: 900px) {
+  .document { transform-origin: top left; }
+}
+@media print {
+  html, body { background:#fff; }
+  .demo-controls { display:none; }
+  .document { margin:0; }
+  .page { box-shadow:none; page-break-before:auto; }
+}

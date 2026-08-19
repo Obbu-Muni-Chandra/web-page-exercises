@@ -1,0 +1,68 @@
+@page { size: A4; margin: 0; }
+* { box-sizing:border-box; }
+html, body { margin:0; padding:0; background:#eee; }
+body { font-family:"Times New Roman", Times, serif; color:#111; font-size:14px; }
+.demo-controls { position:fixed; z-index:2; top:12px; right:12px; display:flex; gap:7px; align-items:center; padding:7px 9px; background:#fff; border:1px solid #999; font:13px Arial, sans-serif; }
+.demo-controls select { font:inherit; }
+.document { width:210mm; margin:0 auto; }
+.page {
+  width:210mm; min-height:0; background:#fff; position:relative;
+  padding:9.5mm 11.8mm 6mm; overflow:visible;
+}
+.page + .page { padding-top:0; }
+.top-header { display:grid; grid-template-columns:58mm 55mm 1fr; align-items:start; }
+.wcb-logo { width:48mm; height:auto; margin-top:1mm; }
+.office-info { font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:1.28; margin-top:0; }
+.title-area { padding-top:0; }
+h1 { font-family:Arial, Helvetica, sans-serif; font-size:19px; line-height:1.1; margin:0 0 8px; }
+h2 { font-size:19px; margin:13px 0 8px; }
+.intro { font-size:16px; margin:10px 0 21px; }
+.blue { color:#06467f; }
+[contenteditable="true"] { cursor:text; }
+.claim-box { border:2px solid #111; display:inline-block; padding:7px 8px; font-family:Arial, Helvetica, sans-serif; font-size:15px; }
+table { width:100%; border-collapse:collapse; table-layout:fixed; margin-bottom:21px; }
+th, td { border:1px solid #222; padding:5px 6px; text-align:left; vertical-align:top; line-height:1.15; height:31px; }
+th { font-weight:normal; font-size:12px; }
+td { font-size:13px; }
+table th:nth-child(1), table td:nth-child(1) { width:20%; }
+table th:nth-child(2), table td:nth-child(2) { width:17%; }
+table th:nth-child(3), table td:nth-child(3) { width:17%; }
+table th:nth-child(4), table td:nth-child(4) { width:32%; }
+table th:nth-child(5), table td:nth-child(5) { width:14%; }
+.supplies th:nth-child(1), .supplies td:nth-child(1) { width:19%; }
+.supplies th:nth-child(2), .supplies td:nth-child(2) { width:10%; }
+.supplies th:nth-child(3), .supplies td:nth-child(3) { width:10%; }
+.supplies th:nth-child(4), .supplies td:nth-child(4) { width:22%; }
+.supplies th:nth-child(5), .supplies td:nth-child(5) { width:11%; }
+.supplies th:nth-child(6), .supplies td:nth-child(6) { width:28%; }
+.mileage { margin-bottom:0; }
+.mileage th:nth-child(1), .mileage td:nth-child(1) { width:16%; }
+.mileage th:nth-child(2), .mileage td:nth-child(2) { width:35%; }
+.mileage th:nth-child(3), .mileage td:nth-child(3) { width:31%; }
+.mileage th:nth-child(4), .mileage td:nth-child(4) { width:18%; }
+.note { font-size:16px; line-height:1.05; margin: 0 0 19px; }
+footer { position:absolute; bottom:8mm; left:16.5mm; right:11.5mm; display:grid; grid-template-columns:1fr 1fr auto; align-items:end; font-size:13px; font-family:Arial, Helvetica, sans-serif; }
+footer span:only-child { text-align:right; }
+footer span:nth-child(2) { text-align:center; }
+footer span:nth-child(3) { text-align:right; }
+
+.page-two { padding-top:0; }
+.page-two h2 { margin-top:0; margin-bottom:14px; }
+.asterisk { font-size:16px; margin:0 0 17px; }
+.transport { margin-bottom:21px; }
+.transport th:nth-child(1), .transport td:nth-child(1) { width:14%; }
+.transport th:nth-child(2), .transport td:nth-child(2) { width:30%; }
+.transport th:nth-child(3), .transport td:nth-child(3) { width:35%; }
+.transport th:nth-child(4), .transport td:nth-child(4) { width:14%; }
+.transport th:nth-child(5), .transport td:nth-child(5) { width:12%; }
+hr { border:0; border-top:2px solid #bbb; margin:0 0 25px; }
+.privacy-check { display:flex; align-items:flex-start; gap:10px; font-size:16px; margin-left:8px; }
+input[type="checkbox"] { appearance:none; -webkit-appearance:none; width:14px; height:14px; border:1px solid #888; margin:1px 0 0; flex:0 0 14px; background:#fff; position:relative; }
+input[type="checkbox"]:checked::after { content:"✓"; position:absolute; font:bold 13px Arial; left:0; top:-2px; }
+a { color:#06c; text-decoration:underline; }
+
+@media print {
+  html, body { background:#fff; }
+  .demo-controls { display:none; }
+  .document { margin:0; }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical & Travel Expense Request</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="demo-controls" aria-label="Demo data controls">
+  <label for="expense-demo">Demo data</label>
+  <select id="expense-demo">
+    <option value="sample">Completed sample</option>
+    <option value="expanded">Expanded claim</option>
+  </select>
+</aside>
+<main class="document">
+
+  <section class="page">
+    <header class="top-header">
+      <img src="wcb-logo.png" class="wcb-logo" alt="Workers Compensation Board of Manitoba">
+      <div class="office-info">
+        <div>333 Broadway</div>
+        <div>Winnipeg, MB R3C 4W3</div>
+        <div>Phone: (204) 954-4321</div>
+        <div>Toll Free: 1-855-954-4321</div>
+        <div>wcb.mb.ca</div>
+      </div>
+      <div class="title-area">
+        <h1>Medical &amp; Travel Expense<br>Request</h1>
+        <div class="claim-box">Claim No. <span data-expense="claimNumber" contenteditable="true" spellcheck="false">20042047</span></div>
+      </div>
+    </header>
+
+    <p class="intro"><span class="blue" data-expense="workerName" contenteditable="true" spellcheck="false">Madeleine Willson</span> requested reimbursement for the following medical and/or travel expenses:</p>
+
+    <h2>Prescription Drugs</h2>
+    <table>
+      <thead><tr><th>Drug Name</th><th>Prescription Date</th><th>Date Purchased</th><th>Healthcare Provider Name</th><th>Paid Amount</th></tr></thead>
+      <tbody id="prescription-rows"></tbody>
+    </table>
+
+    <h2>Over-the-Counter Drugs</h2>
+    <table>
+      <thead><tr><th>Drug Name</th><th>Date Purchased</th><th>Paid Amount</th><th>Seller's Name</th><th>Reason for Purchasing</th></tr></thead>
+      <tbody id="over-counter-rows"></tbody>
+    </table>
+
+    <h2>Bandages, Braces or Other Medical Supplies</h2>
+    <table class="supplies">
+      <thead><tr><th>Item Purchased</th><th>Date Purchased</th><th>Was this Prescribed?</th><th>Healthcare Provider Name</th><th>Paid Amount</th><th>Seller's Name</th></tr></thead>
+      <tbody id="supply-rows"></tbody>
+    </table>
+
+    <h2>Parking for Medical Appointments</h2>
+    <table>
+      <thead><tr><th>Address of Healthcare Provider/Medical Facility</th><th>Date</th><th>Paid Amount</th><th>Meter Used?</th><th>Meter Number</th></tr></thead>
+      <tbody id="parking-rows"></tbody>
+    </table>
+
+    <h2> Mileage to Medical Appointments</h2>
+    <p class="note">The WCB will generally reimburse only those transportation costs which are in excess of costs that would be<br>incurred by the worker while travelling to and from work.</p>
+    <table class="mileage">
+      <thead><tr><th>Appointment Date</th><th>Address of Healthcare Provider/Medical Facility</th><th>Address of Workplace</th><th>Number of km (Round<br>Trip)</th></tr></thead>
+      <tbody id="mileage-rows"></tbody>
+    </table>
+
+  </section>
+
+  <section class="page page-two">
+    <h2>Bus or Taxi Fare for Medical Appointments<sup>*</sup></h2>
+    <p class="asterisk">*Note: Pre-approval is required from your WCB representative to claim taxi fare(s).</p>
+
+    <table class="transport">
+      <thead><tr><th>Appointment Date</th><th>Address of Starting Point</th><th>Address of Healthcare Provider/Medical Facility</th><th>Bus or Taxi<br>(indicate one)</th><th>Total Fare<br>Paid</th></tr></thead>
+      <tbody id="transport-rows"></tbody>
+    </table>
+
+    <hr>
+
+    <label class="privacy-check">
+      <input type="checkbox" checked>
+      <span>I understand that the <a href="#" onclick="return false;">Privacy Notice</a> applies to the personal information collected in this document.</span>
+    </label>
+
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
